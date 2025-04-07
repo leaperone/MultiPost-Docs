@@ -7,12 +7,18 @@
     "index",
     "---Extension API---",
     "extension",
-    "extension-authorization",
+    "extension-authentication",
     "extension-publish",
     "extension-accounts",
     "extension-others",
     "extension-reference",
     "---Web API---",
-    "web"
+    "web",
+    "web-authentication",
+    "clients/get",
+    "client/get",
+    "client/put",
+    "task/get",
+    "task/post"
   ]
 }

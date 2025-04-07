@@ -3,3 +3,18 @@ title: API Reference
 ---
 
 为了让我们的扩展更加强大，我们对外提供了相关接口，允许网页调用我们的扩展程序。你可以在自己的网页中，集成 MultiPost 扩展，允许用户一键发布内容到多个平台上。
+
+## 扩展 API
+
+我们通过 `window.postMessage` 来实现网页和扩展程序之间的通信。允许开发者调用我们的扩展程序的接口，来实现发布、获取账号信息、获取平台信息等功能。
+
+## 网页 API （Beta, Only for Version above 1.1.0）
+
+我们在 multipost.app 中，提供了一个网页 API，允许开发者远程调用我们的扩展程序的接口，来实现扩展信息获取、发布任务创建等功能。目前支持远程调用、定时发布等功能。
+
+## What is Next?
+
+<Cards>
+  <Card title="Learn more about Extension API" href="/docs/api-reference/extension" />
+  <Card title="Learn more about Web API" href="/docs/api-reference/web" />
+</Cards>

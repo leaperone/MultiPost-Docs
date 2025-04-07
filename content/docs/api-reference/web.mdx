@@ -2,5 +2,18 @@
 title: Web API
 ---
 
-## 扩展程序 API
+## 原理介绍
 
+开发者首先需要在 `multipost.app` 中创建一个账号，然后通过 `multipost.app` 的 API 接口，来实现扩展信息获取、发布任务创建等功能。
+
+## 使用
+
+1. 在 [multipost.app](https://multipost.app) 中创建一个账号
+2. 安装 MultiPost 扩展
+3. 打开 [Extension Client](https://multipost.app/dashboard/publish/client)
+4. 点击 `Connect Extension` 按钮，连接扩展
+5. 等待扩展第一次连接并获取 `Client ID`
+6. 打开 [API Keys](https://multipost.app/dashboard/api-keys)
+7. 点击 `Create API Key` 按钮，创建一个 API Key
+8. 复制 `API Key`
+9. 使用 `API Key` 以及 `Client ID` 调用相关接口
