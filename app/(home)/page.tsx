@@ -7,12 +7,26 @@ export default function HomePage() {
       <p className="text-fd-muted-foreground mb-8 max-w-2xl">
         This is the MultiPost documentation center, where you can find all the information and usage guides about MultiPost.
       </p>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Link
+          href="/docs/user-guide"
+          className="px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors"
+      >
+        User Guide
+      </Link>
       <Link
-        href="/docs/extension"
+        href="/docs/api-reference"
         className="px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors"
       >
-        Get Started
+        Api Reference
       </Link>
+      <Link
+        href="/docs/development"
+        className="px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors"
+        >
+          Development
+        </Link>
+      </div>
     </main>
   );
 }

@@ -3,10 +3,9 @@
   "description": "How to use MultiPost",
   "root": true,
   "pages": [
-    "---Introduction---",
+    "---Quick Start---",
     "index",
-    "what-is-multipost",
-    "comparisons",
+    "quick-start",
     "---Development---",
     "start-development",
     "...",
