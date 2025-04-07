@@ -1,9 +1,9 @@
 {
-  "name": "dev-multipost",
+  "name": "dev-multipost-docs",
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "workspaceFolder": "/root/multipost",
+  "workspaceFolder": "/root/multipost-docs",
   "shutdownAction": "stopContainer",
   "remoteUser": "root",
   "runArgs": ["--network=host"],
