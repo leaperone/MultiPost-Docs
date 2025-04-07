@@ -1,6 +1,6 @@
 {
-  "title": "MultiPost Core",
-  "description": "The Core of MultiPost",
+  "title": "User Guide",
+  "description": "How to use MultiPost",
   "root": true,
   "pages": [
     "---Introduction---",

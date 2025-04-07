@@ -8,7 +8,7 @@ export default function HomePage() {
         This is the MultiPost documentation center, where you can find all the information and usage guides about MultiPost.
       </p>
       <Link
-        href="/docs/core"
+        href="/docs/extension"
         className="px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors"
       >
         Get Started

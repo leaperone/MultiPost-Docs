@@ -1,0 +1,32 @@
+---
+title: 获取用户已登录账户信息
+---
+
+## 获取当前已登录账号信息
+
+```js
+window.postMessage({
+  type: 'request',
+  traceId: '',
+  action: 'MUTLIPOST_EXTENSION_GET_ACCOUNT_INFOS',
+  data: {},
+});
+```
+
+响应体：
+
+```typescript
+interface AccountInfoResponse {
+  accountInfos: Record<string, AccountInfo>;
+}
+
+interface AccountInfo {
+  provider: string; // 账号提供商
+  accountId: string; // 账号 ID
+  username: string; // 账号名称
+  description?: string; // 账号描述
+  profileUrl?: string; // 账号链接
+  avatarUrl?: string; // 账号头像
+  extraData: any; // 账号额外数据
+}
+```

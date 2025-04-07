@@ -1,0 +1,80 @@
+---
+title: 发布接口
+---
+
+
+## 获取当前可用于发布的平台
+
+```js
+window.postMessage({
+  type: 'request',
+  traceId: '',
+  action: 'MUTLIPOST_EXTENSION_PLATFORMS',
+  data: {},
+});
+```
+
+响应体：
+
+```typescript
+interface PlatformResponse {
+  platforms: PlatformInfo[]; // 当前可用于发布的平台
+}
+
+interface PlatformInfo {
+  type: 'DYNAMIC' | 'VIDEO';
+  name: string;
+  homeUrl: string;
+  faviconUrl?: string;
+  platformName: string;
+  username?: string;
+  userAvatarUrl?: string;
+  injectUrl: string;
+  injectFunction: (data: SyncData) => Promise<void>;
+  accountKey: string;
+  tags: string[];
+  accountInfo: AccountInfo;
+}
+```
+
+## 发布内容
+
+有关 `SyncData` 的和其他的类型定义，请参考 `src/sync/common.ts` 中的 `SyncData` 类型。
+
+```js
+interface SyncDataPlatform {
+  name: string;
+  injectUrl: string;
+  extraConfig:
+    | {
+        customInjectUrls?: string[]; // Beta 功能，用于自定义注入 URL
+      }
+    | unknown;
+}
+
+interface SyncData {
+  platforms: SyncDataPlatform[];
+  isAutoPublish: boolean;
+  data: DynamicData | ArticleData | VideoData;
+}
+
+window.postMessage({
+  type: 'request',
+  traceId: '',
+  action: 'MUTLIPOST_EXTENSION_PUBLISH',
+  data: {
+    platforms: [{
+      name: 'DYNAMIC_BILIBILI',
+      injectUrl: 'https://t.bilibili.com/',
+      extraConfig: {},
+    }],
+    isAutoPublish: true,
+    data: {
+      title: 'test',
+      content: 'test',
+      images: [],
+      videos: [],
+    },
+  },
+});
+```

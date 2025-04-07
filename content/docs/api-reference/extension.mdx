@@ -1,0 +1,56 @@
+---
+title: 使用扩展接口
+---
+
+## 原理介绍
+
+我们通过 `window.postMessage` 来实现网页和扩展程序之间的通信。
+扩展首先会在每个网页中都注入 `src/contents/extension.ts` 中的脚本，然后通过 `window.postMessage` 来发送消息和接收消息并将消息发送给 `src/background/index.ts` 中的脚本进行处理。
+
+**你需要使用适当的的方式，发起请求并处理扩展的返回值。**
+
+## 接口
+
+一个基本的处理逻辑和思路，应该是：
+
+1.  检查是否安装了扩展
+2.  如果安装了扩展，则检查是否授权了当前网页的域名
+3.  如果未授权，则向用户请求授权
+4.  如果授权了，则向扩展请求所有可以发布的平台
+5.  组织用户输入的内容，调用扩展的发布接口进行发布
+
+## 通用接口请求、响应
+
+具体内容参考 `src/types/external.ts` 中的 `ExternalRequest` 和 `ExternalResponse` 类型。
+
+```typescript
+export type ExtensionExternalRequest<T> = {
+  type: 'request';
+  traceId: string;
+  action: string;
+  data: T;
+};
+
+export interface ExtensionExternalResponse<T> {
+  type: 'response';
+  traceId: string;
+  action: string;
+  code: number;
+  message: string;
+  data: T;
+}
+```
+
+一个基本的请求示例：
+
+```typescript
+window.postMessage(
+  {
+    type: 'request',
+    traceId: '123', // traceId 用于标识一次请求，由调用方生成
+    action: 'getToken',
+    data: { name: 'test' },
+  },
+  '*',
+);
+```

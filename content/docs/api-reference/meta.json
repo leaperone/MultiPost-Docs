@@ -1,0 +1,18 @@
+{
+  "title": "API Reference",
+  "description": "How to use the API of MultiPost",
+  "root": true,
+  "pages": [
+    "---Introduction---",
+    "index",
+    "---Extension API---",
+    "extension",
+    "extension-authorization",
+    "extension-publish",
+    "extension-accounts",
+    "extension-others",
+    "extension-reference",
+    "---Web API---",
+    "web"
+  ]
+}
