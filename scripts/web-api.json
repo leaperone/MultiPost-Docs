@@ -13,6 +13,134 @@
   ],
   "components": {
     "schemas": {
+      "DynamicData": {
+        "type": "object",
+        "required": ["content"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "动态标题"
+          },
+          "content": {
+            "type": "string",
+            "description": "动态内容"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileData"
+            }
+          },
+          "videos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileData"
+            }
+          }
+        }
+      },
+      "FileData": {
+        "type": "object",
+        "required": ["name", "url", "type", "size"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "文件名称"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "文件URL"
+          },
+          "type": {
+            "type": "string",
+            "description": "文件类型"
+          },
+          "size": {
+            "type": "number",
+            "description": "文件大小"
+          },
+          "base64": {
+            "type": "string",
+            "description": "文件base64编码"
+          },
+          "originUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "原始文件URL"
+          }
+        }
+      },
+      "ArticleData": {
+        "type": "object",
+        "required": ["title", "content", "digest", "cover"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "文章标题"
+          },
+          "content": {
+            "type": "string",
+            "description": "文章内容"
+          },
+          "digest": {
+            "type": "string",
+            "description": "文章摘要"
+          },
+          "cover": {
+            "$ref": "#/components/schemas/FileData",
+            "description": "文章封面"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileData"
+            }
+          },
+          "videos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileData"
+            }
+          },
+          "fileDatas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FileData"
+            }
+          },
+          "originContent": {
+            "type": "string",
+            "description": "原始内容"
+          },
+          "markdownContent": {
+            "type": "string",
+            "description": "Markdown格式内容"
+          },
+          "markdownOriginContent": {
+            "type": "string",
+            "description": "原始Markdown内容"
+          }
+        }
+      },
+      "VideoData": {
+        "type": "object",
+        "required": ["title", "content", "video"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "视频标题"
+          },
+          "content": {
+            "type": "string",
+            "description": "视频描述"
+          },
+          "video": {
+            "$ref": "#/components/schemas/FileData",
+            "description": "视频文件"
+          }
+        }
+      },
       "Platform": {
         "type": "object",
         "required": ["name", "injectUrl"],
@@ -56,7 +184,17 @@
             "default": false
           },
           "data": {
-            "type": "object"
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DynamicData"
+              },
+              {
+                "$ref": "#/components/schemas/ArticleData"
+              },
+              {
+                "$ref": "#/components/schemas/VideoData"
+              }
+            ]
           }
         }
       },
