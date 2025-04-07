@@ -3,11 +3,13 @@
   "description": "How to use MultiPost",
   "root": true,
   "pages": [
-    "---Quick Start---",
+    "---MultiPost---",
     "index",
     "quick-start",
-    "---Development---",
-    "start-development",
+    "---Analytics---",
+    "analytics-web",
+    "analytics-social-media",
+    "---Others---",
     "...",
     "(integrations)"
   ]
