@@ -1,0 +1,15 @@
+{
+  "title": "MultiPost Core",
+  "description": "The Core of MultiPost",
+  "root": true,
+  "pages": [
+    "---Introduction---",
+    "index",
+    "what-is-multipost",
+    "comparisons",
+    "---Development---",
+    "start-development",
+    "...",
+    "(integrations)"
+  ]
+}
