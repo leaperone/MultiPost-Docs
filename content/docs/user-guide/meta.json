@@ -3,7 +3,6 @@
   "description": "How to use MultiPost",
   "root": true,
   "pages": [
-    "---MultiPost---",
     "index",
     "quick-start",
     "---Analytics---",
