@@ -24,6 +24,16 @@ export const baseOptions: BaseLayoutProps = {
     ),
   },
   links: [
+    {
+      text: 'Home',
+      url: 'https://multipost.app',
+      active: 'nested-url',
+    },
+    {
+      text: 'Dashboard',
+      url: 'https://multipost.app/dashboard',
+      active: 'nested-url',
+    },
     // {
     //   text: 'Documentation',
     //   url: '/docs',
