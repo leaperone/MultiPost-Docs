@@ -6,6 +6,18 @@ title: Overview
 
 开发者首先需要在 `multipost.app` 中创建一个账号，然后通过 `multipost.app` 的 API 接口，来实现扩展信息获取、发布任务创建等功能。
 
+## 效果
+1. 现在需要一个在图形系统（比如 Windows、Linux GUI、MacOs）上面长时间运行一个安装了扩展的浏览器。称之为 “维护 Node”。
+
+2. 注册 MultiPost 账号，然后在网页端连接扩展，并登记到 MultiPost 后台。成为 Node
+
+3. 你可以用 Restful 接口调用这个 Node 执行发布任务。
+
+### 示例
+1. 你在自己的电脑上面，维护了一个 Node，然后用 cron 定时任务，每天定时运行发布天气讯息。
+2. 你在自己的电脑上面，维护了一个 Node，然后用 Python 脚本调用 Node 的 Restful 接口，来发布 Meme 图片。
+3. 你在云电脑上面，维护了一个 Node，然后用服务器上的 Shell 脚本调用 Node 的 Restful 接口，来发布新闻资讯。
+
 ## 使用
 
 1. 在 [multipost.app](https://multipost.app) 中创建一个账号
