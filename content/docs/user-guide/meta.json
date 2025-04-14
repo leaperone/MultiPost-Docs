@@ -8,11 +8,11 @@
     "---Markdown Editor---",
     "markdown-editor/index",
     "---Analytics---",
-    "analytics-web",
-    "analytics-social-media",
-    "---Pricing and Recharge---",
-    "pricing-and-recharge/index",
+    "analytics/web",
+    "analytics/social-media",
     "---Others---",
-    "..."
+    "pricing",
+    "contact-us",
+    "other-service"
   ]
 }
