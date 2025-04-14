@@ -5,6 +5,8 @@
   "pages": [
     "index",
     "quick-start",
+    "---Markdown Editor---",
+    "markdown-editor/index",
     "---Analytics---",
     "analytics-web",
     "analytics-social-media",
