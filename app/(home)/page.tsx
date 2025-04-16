@@ -18,7 +18,7 @@ export default function HomePage() {
         href="/docs/api-reference"
         className="px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors"
       >
-        Api Reference
+        API Reference
       </Link>
       <Link
         href="/docs/development"

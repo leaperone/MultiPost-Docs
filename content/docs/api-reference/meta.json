@@ -18,6 +18,11 @@
     "restful/client/get",
     "restful/client/put",
     "restful/task/post",
-    "restful/task/get"
+    "restful/task/get",
+    "---Scraper API---",
+    "scraper/overview",
+    "scraper/authentication",
+    "scraper/web/post",
+    "scraper/search/post"
   ]
 }
