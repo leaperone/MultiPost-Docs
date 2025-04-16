@@ -10,6 +10,8 @@
     "---Analytics---",
     "analytics/web",
     "analytics/social-media",
+    "---Scraper---",
+    "scraper/index",
     "---Others---",
     "pricing",
     "contact-us",
