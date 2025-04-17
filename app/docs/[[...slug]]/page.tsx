@@ -5,7 +5,7 @@ import {
   DocsDescription,
   DocsTitle,
 } from 'fumadocs-ui/page';
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
 
@@ -13,6 +13,12 @@ export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
 }) {
   const params = await props.params;
+  
+  // 检查是否是 api-reference 开头的路径
+  if (params.slug?.[0] === 'api-reference') {
+    redirect('https://api-docs.multipost.app/');
+  }
+
   const page = source.getPage(params.slug);
   if (!page) notFound();
 

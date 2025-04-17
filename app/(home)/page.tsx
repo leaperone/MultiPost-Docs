@@ -15,7 +15,7 @@ export default function HomePage() {
         User Guide
       </Link>
       <Link
-        href="/docs/api-reference"
+        href="https://api-docs.multipost.app/"
         className="px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors"
       >
         API Reference

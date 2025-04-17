@@ -3,26 +3,6 @@
   "description": "How to use the API of MultiPost",
   "root": true,
   "pages": [
-    "index",
-    "---Extension API---",
-    "extension/overview",
-    "extension/authentication",
-    "extension/publish",
-    "extension/accounts",
-    "extension/others",
-    "extension/reference",
-    "---Restful API---",
-    "restful/overview",
-    "restful/authentication",
-    "restful/clients/get",
-    "restful/client/get",
-    "restful/client/put",
-    "restful/task/post",
-    "restful/task/get",
-    "---Scraper API---",
-    "scraper/overview",
-    "scraper/authentication",
-    "scraper/search/post",
-    "scraper/reader/post"
+    "index"
   ]
 }
