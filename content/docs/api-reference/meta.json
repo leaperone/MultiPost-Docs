@@ -22,7 +22,7 @@
     "---Scraper API---",
     "scraper/overview",
     "scraper/authentication",
-    "scraper/web/post",
-    "scraper/search/post"
+    "scraper/search/post",
+    "scraper/reader/post"
   ]
 }
