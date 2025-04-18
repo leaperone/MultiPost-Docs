@@ -1,3 +1,4 @@
+import { BookCheckIcon, BugPlayIcon, WebhookIcon } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HomePage() {
@@ -8,25 +9,25 @@ export default function HomePage() {
         This is the MultiPost documentation center, where you can find all the information and usage guides about MultiPost.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
-        <Link
-          href="/docs/user-guide"
-          className="px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors"
-      >
-        User Guide
-      </Link>
-      <Link
-        href="https://api-docs.multipost.app/"
-        className="px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors"
-      >
-        API Reference
-      </Link>
-      <Link
-        href="/docs/development"
-        className="px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors"
-        >
+        <Button href="/docs/user-guide" icon={<BookCheckIcon />}>
+          User Guide
+        </Button>
+        <Button href="https://api-docs.multipost.app/" icon={<WebhookIcon />}>
+          API Reference
+        </Button>
+        <Button href="/docs/development" icon={<BugPlayIcon />}>
           Development
-        </Link>
+        </Button>
       </div>
     </main>
   );
 }
+
+const Button = ({ children, icon, href }: { children: React.ReactNode, icon: React.ReactNode, href: string }) => {
+  return (
+    <Link href={href} className="flex items-center gap-2 px-6 py-3 bg-fd-primary text-fd-primary-foreground rounded-md font-medium hover:bg-fd-primary/90 transition-colors">
+      {icon}
+      {children}
+    </Link>
+  );
+};
