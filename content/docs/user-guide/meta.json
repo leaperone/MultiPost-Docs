@@ -3,10 +3,10 @@
   "description": "How to use MultiPost",
   "root": true,
   "pages": [
+    "---MultiPost---",
     "index",
     "quick-start",
-    "---Markdown Editor---",
-    "markdown-editor/index",
+    "markdown-editor",
     "---Analytics---",
     "analytics/web",
     "analytics/social-media",
