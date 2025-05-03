@@ -4,9 +4,9 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <main className="flex flex-1 flex-col justify-center items-center text-center p-8">
-      <h1 className="mb-4 text-4xl font-bold">Welcome to MultiPost Documentation</h1>
+      <h1 className="mb-4 text-4xl font-bold">MultiPost Documentation</h1>
       <p className="text-fd-muted-foreground mb-8 max-w-2xl">
-        This is the MultiPost documentation center, where you can find all the information and usage guides about MultiPost.
+        MultiPost is a tool that allows you to post to multiple social media platforms from a single interface.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
         <Button href="/docs/user-guide" icon={<BookCheckIcon />}>
