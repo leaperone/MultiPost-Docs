@@ -17,6 +17,9 @@ const config = {
       {
         hostname: 'img.shields.io',
       },
+      {
+        hostname: '2someone-web-static.s3.bitiful.net',
+      },
     ],
   },
 };
