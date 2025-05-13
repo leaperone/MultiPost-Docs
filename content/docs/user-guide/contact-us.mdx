@@ -2,7 +2,9 @@
 title: Contact us | 联系我们
 ---
 import Image from 'next/image';
-import qqImageUrl from '@/public/channel.png';
+import tencentChannelWechat from '@/public/Tencent-Channel-Wechat.png';
+import tencentChannelQQ from '@/public/Tencent-Channel-QQ.png';
+import tencentChannelWechatQna from '@/public/Tencent-Channel-Wechat-qna.png';
 
 > 快速迭代中，不设置 Changelog。如需了解最新动态，请关注腾讯频道并关注推特：[海鱼Harry](https://x.com/harry_is_fish)
 
@@ -14,15 +16,22 @@ import qqImageUrl from '@/public/channel.png';
 
 请在 [GitHub Issues](https://github.com/leaperone/MultiPost-Extension/issues) 或者 [腾讯频道(提问贴)](https://pd.qq.com/s/8j55qpp2x) 中提出，等待社区反馈。
 
+<Image src={tencentChannelWechatQna} alt="Channel Wechat QNA" width="50%" />
+
 ## 联系我们
 ### 联系开发组
+- [Discord](https://discord.gg/GNsCX9zFwQ)
+- [MultiPost Extension GitHub Issues](https://github.com/leaperone/MultiPost-Extension/issues)
+- support@leaper.one
+- [腾讯频道](https://pd.qq.com/s/e3ucjmz5g?b=9)
 <div style={{display: 'flex', gap: '20px', flexDirection: {xs: 'column', sm: 'row', md: 'row'}}}>
-  <Image src={qqImageUrl} alt="QQ Group QR Code" width={270} />
+  <div style={{width: '48%'}}>
+    <p>QQ 扫一扫</p>
+    <Image src={tencentChannelQQ} alt="Channel QQ QR Code" width="max-content" />
+  </div>
   <div style={{width: '50%'}}>
-    - [腾讯频道](https://pd.qq.com/s/e3ucjmz5g?b=9)
-    - [Discord](https://discord.gg/GNsCX9zFwQ)
-    - [MultiPost Extension GitHub Issues](https://github.com/leaperone/MultiPost-Extension/issues)
-    - support@leaper.one
+    <p>微信 扫一扫</p>
+    <Image src={tencentChannelWechat} alt="Channel Wechat QR Code" width="max-content" />
   </div>
 </div>
 
