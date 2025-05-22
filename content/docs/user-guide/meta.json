@@ -13,6 +13,8 @@
     "analytics/social-media",
     "---Scraper---",
     "scraper/index",
+    "---MultiGet---",
+    "multiget/index",
     "---Others---",
     "pricing",
     "contact-us",
