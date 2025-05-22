@@ -1,9 +1,12 @@
 import { BookCheckIcon, BugPlayIcon, WebhookIcon } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
+import MultiPostLogo from '@/public/MultiPost-Latest.png';
 
 export default function HomePage() {
   return (
     <main className="flex flex-1 flex-col justify-center items-center text-center p-8">
+      <Image src={MultiPostLogo} alt="MultiPost Logo" width={200} height={200} />
       <h1 className="mb-4 text-4xl font-bold">MultiPost Documentation</h1>
       <p className="text-fd-muted-foreground mb-8 max-w-2xl">
         MultiPost is a tool that allows you to post to multiple social media platforms from a single interface.

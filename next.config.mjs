@@ -20,6 +20,9 @@ const config = {
       {
         hostname: '2someone-web-static.s3.bitiful.net',
       },
+      {
+        hostname: 'private-user-images.githubusercontent.com',
+      }
     ],
   },
 };
