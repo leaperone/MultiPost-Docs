@@ -1,8 +1,10 @@
 import { Banner } from 'fumadocs-ui/components/banner';
 import './global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
+import type { Translations } from 'fumadocs-ui/i18n';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
+import { i18n } from '@/lib/i18n';
 
 export const metadata = {
   title: 'MultiPost Documentation',
@@ -13,9 +15,22 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
-export default function Layout({ children }: { children: ReactNode }) {
+// translations
+const zh: Partial<Translations> = {
+  search: '搜索内容',
+};
+
+// available languages that will be displayed on UI
+const locales = i18n.languages.map(lang => ({
+  name: lang === 'zh' ? '中文' : 'English',
+  locale: lang,
+}));
+
+export default async function Layout({ children, params }: { children: ReactNode, params: Promise<{ lang: string }> }) {
+  const lang = (await params).lang;
+
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang={lang} className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
       <Banner variant="rainbow" id="try-multiget">
         <p>
@@ -25,7 +40,13 @@ export default function Layout({ children }: { children: ReactNode }) {
           「MultiGet」
         </a>
         </Banner>
-        <RootProvider>{children}</RootProvider>
+        <RootProvider 
+          i18n={{
+            locale: lang,
+            locales,
+            translations: { zh }[lang],
+          }}
+        >{children}</RootProvider>
       </body>
     </html>
   );
