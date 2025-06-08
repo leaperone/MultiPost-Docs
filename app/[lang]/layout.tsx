@@ -1,5 +1,5 @@
 import { Banner } from 'fumadocs-ui/components/banner';
-import './global.css';
+import '../global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
 import type { Translations } from 'fumadocs-ui/i18n';
 import { Inter } from 'next/font/google';
