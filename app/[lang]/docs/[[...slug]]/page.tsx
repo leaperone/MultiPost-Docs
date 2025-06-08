@@ -10,7 +10,7 @@ import { createRelativeLink } from 'fumadocs-ui/mdx';
 import { getMDXComponents } from '@/mdx-components';
 
 export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>;
+  params: Promise<{ slug?: string[], lang: string }>;
 }) {
   const params = await props.params;
   
@@ -19,7 +19,7 @@ export default async function Page(props: {
     redirect('https://api-docs.multipost.app/');
   }
 
-  const page = source.getPage(params.slug);
+  const page = source.getPage(params.slug, params.lang);
   if (!page) notFound();
 
   const MDXContent = page.data.body;

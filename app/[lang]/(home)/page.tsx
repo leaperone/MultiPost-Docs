@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import MultiPostLogo from '@/public/MultiPost-Latest.png';
 
-export default function HomePage() {
+export default async function HomePage(props: { params: Promise<{ lang: string }> }) {
+  const lang = (await props.params).lang;
   return (
     <main className="flex flex-1 flex-col justify-center items-center text-center p-8">
       <Image src={MultiPostLogo} alt="MultiPost Logo" width={200} height={200} />
@@ -12,13 +13,13 @@ export default function HomePage() {
         MultiPost is a tool that allows you to post to multiple social media platforms from a single interface.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
-        <Button href="/docs/user-guide" icon={<BookCheckIcon />}>
+        <Button href={`/${lang}/docs/user-guide`} icon={<BookCheckIcon />}>
           User Guide
         </Button>
         <Button href="https://api-docs.multipost.app/" icon={<WebhookIcon />}>
           API Reference
         </Button>
-        <Button href="/docs/development" icon={<BugPlayIcon />}>
+        <Button href={`/${lang}/docs/development`} icon={<BugPlayIcon />}>
           Development
         </Button>
       </div>
