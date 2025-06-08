@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { i18n } from "@/lib/i18n";
+import Link from "next/link";
 
 /**
  * Shared layout configurations
@@ -22,16 +23,18 @@ export const baseOptions = (locale: string): BaseLayoutProps => ({
   githubUrl: "https://github.com/leaperone/MultiPost-Extension",
   nav: {
     title: (
-      <>
-        <Image
-          width={24}
-          height={24}
-          src="/favicon.ico"
-          alt="Logo"
-          className="rounded-full"
-        />
-        MultiPost
-      </>
+      <Link href={`/${locale}/`}>
+        <div className="flex items-center gap-2">
+          <Image
+            width={24}
+            height={24}
+            src="/favicon.ico"
+            alt="Logo"
+            className="rounded-full"
+          />
+          MultiPost
+        </div>
+      </Link>
     ),
     transparentMode: "top",
   },
@@ -55,7 +58,7 @@ export const baseOptions = (locale: string): BaseLayoutProps => ({
       label: "Contact Us Link",
       text: "Contact Us",
       icon: <MailIcon />,
-      url: "/docs/user-guide/contact-us",
+      url: `/${locale}/docs/user-guide/contact-us`,
     },
     {
       type: "icon",
