@@ -5,6 +5,7 @@ import {
   HomeIcon,
   LayoutDashboardIcon,
   MailIcon,
+  NewspaperIcon,
   PuzzleIcon,
 } from "lucide-react";
 import Image from "next/image";
@@ -52,6 +53,13 @@ export const baseOptions = (locale: string): BaseLayoutProps => ({
       text: "Dashboard",
       icon: <LayoutDashboardIcon />,
       url: "https://multipost.app/dashboard",
+    },
+    {
+      type: 'icon',
+      label: 'Blog Link',
+      text: 'Blog',
+      icon: <NewspaperIcon />,
+      url: 'https://blog.multipost.app',
     },
     {
       type: "icon",
